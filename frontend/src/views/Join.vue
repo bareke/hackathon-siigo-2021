@@ -10,6 +10,7 @@
     <!--<button class="btn btn-success mt-3" @click="actionAddUser({id:'3242',hex:this.codeJoin,active:0})">Ingresar</button>-->
     <button class="btn btn-success mt-3" @click="JoinGame({id:'3242',hex:this.codeJoin,active:1,name:this.nameUser})">Ingresar</button>
   </div>
+
 </template>
 
 <script>
