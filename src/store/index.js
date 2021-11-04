@@ -9,12 +9,15 @@ export default createStore({
   },
   mutations: {
     addUser (state, user) {
-      state.users.push(user)
+      console.log(user);
+      state.users.push(user);
+      console.log(state.users);
     }
-
   },
   actions: {
-
+    actionAddUser({commit}, value) {
+      commit('addUser', value);
+    },
   },
   modules: {
 
