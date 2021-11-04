@@ -12,7 +12,7 @@ export default {
   name: "Join",
   methods:{
     JoinGame(){
-      store.commit('addUser', {id:123,hex:'jghg233',active:0})
+      this.store.commit('addUser', {id:123,hex:'jghg233',active:0})
       alert(this.codeJoin);
     },
   }
