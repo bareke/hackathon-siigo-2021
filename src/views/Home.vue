@@ -5,12 +5,10 @@
         <h1>Bienvenido</h1>
         <div class="row">
           <div class="col-sm-6">
-              <!--<Game />-->
-              <ButtonRedirect  @click="redirectNewGame" displayTxt="UNIRME" typeBtn="btn-success"/>
+              <ButtonRedirect  @click="redirectJoin" displayTxt="UNIRME" typeBtn="btn-success"/>
           </div>
           <div class="col-sm-6">
-              <!--<Join />-->
-              <ButtonRedirect @click="redirectJoin" displayTxt="CREAR" typeBtn="btn-danger"/>
+              <ButtonRedirect @click="redirectNewGame" displayTxt="CREAR" typeBtn="btn-danger"/>
           </div>
         </div>
     </div>
@@ -19,9 +17,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-//import Game from "@/views/Game.vue";
-//import Join from "@/views/Join.vue";
 import ButtonRedirect from "@/components/ButtonRedirect";
 
 export default {
