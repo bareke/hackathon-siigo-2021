@@ -1,12 +1,27 @@
 <template>
   <div>
-    <p>Component Game</p>
     <div class="container">
       <div class="row">
         <div class="col-sm-6 text-center">
-          <button type="button" class="btn btn-primary">Acusar</button>
-          <hr />
-          <button type="button" class="btn btn-secondary">Preguntar</button>
+
+          <div class="row"><h1>Usuario 1</h1></div>
+
+          <div class="row container-btn">
+            <div class="col-sm-6 text-center">
+              <button type="button" class="btn btn-primary">Acusar</button>
+            </div>
+
+            <div class="col-sm-6 text-center">
+                <button type="button" class="btn btn-secondary">Preguntar</button>
+            </div>
+          </div>
+
+          <div class="row cart-container">
+            <div class="col-sm-3 cart">a</div>
+            <div class="col-sm-3 cart">b</div>
+            <div class="col-sm-3 cart">c</div>
+            <div class="col-sm-3 cart">d</div>
+          </div>
         </div>
         <div class="col-sm-6 text-center">
           <table class="table table-hover">
@@ -129,6 +144,9 @@
       </div>
     </div>
   </div>
+
+
+
 </template>
 
 <script>
@@ -138,4 +156,21 @@ export default {
 </script>
 
 <style>
+.cart-container{
+  position: fixed;
+  bottom: 20px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  width: 40%;
+}
+
+.cart{
+  border-right: 1px solid lightgray;
+}
+
+.container-btn{
+  width: 40%;
+  position: fixed;
+  top: 30%;
+}
 </style>

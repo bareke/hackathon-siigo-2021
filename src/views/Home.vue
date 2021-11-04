@@ -26,6 +26,7 @@ export default {
   },
   methods:{
     redirectNewGame() {
+      this.$toast.success(`Partida creada`,{position:"top-right"});
       this.$router.push({
         name: "Game",
         params: {},
