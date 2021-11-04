@@ -3,8 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6 text-center">
-
           <div class="row"><h1>Usuario 1</h1></div>
+
+          Código {{ generateJoin }}
 
           <div class="row container-btn">
             <div class="col-sm-6 text-center">
@@ -12,7 +13,7 @@
             </div>
 
             <div class="col-sm-6 text-center">
-                <button type="button" class="btn btn-secondary">Preguntar</button>
+              <button type="button" class="btn btn-secondary">Preguntar</button>
             </div>
           </div>
 
@@ -144,19 +145,34 @@
       </div>
     </div>
   </div>
-
-
-
 </template>
 
 <script>
 export default {
   name: "Game",
+  data() {
+    return {
+      generateJoin: '',
+    }
+  },
+  mounted() {
+    this.generateRandomToJoin();
+  },
+  methods: {
+    generateRandomToJoin() {
+      const genRanHex = (size) =>
+        [...Array(size)]
+          .map(() => Math.floor(Math.random() * 16).toString(16))
+          .join("");
+
+      this.generateJoin = genRanHex(12);
+    },
+  },
 };
 </script>
 
 <style>
-.cart-container{
+.cart-container {
   position: fixed;
   bottom: 20px;
   border: 1px solid lightgray;
@@ -164,11 +180,11 @@ export default {
   width: 40%;
 }
 
-.cart{
+.cart {
   border-right: 1px solid lightgray;
 }
 
-.container-btn{
+.container-btn {
   width: 40%;
   position: fixed;
   top: 30%;
