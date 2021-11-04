@@ -5,7 +5,9 @@
         <div class="col-sm-6 text-center">
           <div class="row"><h1>Usuario 1</h1></div>
 
-          Código {{ generateJoin }}
+          <div class="row" style="text-align: center;display: block;">
+            <strong>Código para unirse a la partida:</strong> {{ generateJoin }}
+          </div>
 
           <div class="row container-btn">
             <div class="col-sm-6 text-center">
