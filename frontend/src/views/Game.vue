@@ -3,11 +3,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6 text-center">
-          <!--<div class="row"><h1>Usuario 1</h1></div>-->
-          <div class="row"><h1>{{ this.$route.params.nameUser }}</h1></div>
 
-          <div class="row" style="text-align: center;display: block;">
-            <strong>Código para unirse a la partida:</strong> {{ generateJoin }}
+          <div class="usr-partida">
+            <div class="row"><h1>{{ this.$route.params.nameUser }}</h1></div>
+
+            <div class="row" style="text-align: center;display: block; font-size: 15pt;">
+              <strong>Código para unirse a la partida:</strong> {{ generateJoin }}
+            </div>
           </div>
 
           <div class="row container-btn">
@@ -21,10 +23,18 @@
           </div>
 
           <div class="row cart-container">
-            <div class="col-sm-3 cart">a</div>
-            <div class="col-sm-3 cart">b</div>
-            <div class="col-sm-3 cart">c</div>
-            <div class="col-sm-3 cart">d</div>
+            <div class="col-sm-3 cart">
+              <img alt="Vue logo" :src="require('@/assets/devs/antonio.jpg')" style="width: 100%;">
+            </div>
+            <div class="col-sm-3 cart">
+              <img alt="Vue logo" :src="require('@/assets/errors/404.png')" style="width: 100%;">
+            </div>
+            <div class="col-sm-3 cart">
+              <img alt="Vue logo" :src="require('@/assets/modules/contabilidad.png')" style="width: 100%;">
+            </div>
+            <div class="col-sm-3 cart">
+                <img alt="Vue logo" :src="require('@/assets/modules/recibos.png')" style="width: 100%;">
+            </div>
           </div>
         </div>
         <div class="col-sm-6 text-center">
@@ -159,6 +169,9 @@ export default {
     }
   },
   mounted() {
+    if (typeof this.$route.params.nameUser == 'undefined') {
+      this.$route.params.nameUser = 'User';
+    }
     this.generateRandomToJoin();
   },
   methods: {
@@ -191,5 +204,10 @@ export default {
   width: 40%;
   position: fixed;
   top: 30%;
+}
+
+.usr-partida{
+  position: fixed;
+  top: 7%;
 }
 </style>

@@ -1,8 +1,11 @@
 <template>
   <div class="container">
     <h2 class="mt-4">Ingresa el codigo</h2>
-    <input  style="width: 33%; padding-left: 10px;" type="text"  v-model="nameUser"  placeholder="Ingresa nombre de usuario" required><br>
-    <input style="width: 33%; padding-left: 10px;" class="mt-4" type="text"  v-model="codeJoin"  placeholder="Ingresa el código de conexion" required>
+    <div style="text-align: center;padding-left: 30%;padding-right: 30%;">
+      <input  class="form-control mt-4" style="width: 100%; padding-left: 10px;" type="text"  v-model="nameUser"  placeholder="Ingresa nombre de usuario" required>
+      <input class="form-control mt-4" style="width: 100%; padding-left: 10px;" type="text"  v-model="codeJoin"  placeholder="Ingresa el código de conexion" required>
+    </div>
+
     <br>
     <!--<button class="btn btn-success mt-3" @click="actionAddUser({id:'3242',hex:this.codeJoin,active:0})">Ingresar</button>-->
     <button class="btn btn-success mt-3" @click="JoinGame({id:'3242',hex:this.codeJoin,active:1,name:this.nameUser})">Ingresar</button>
@@ -23,8 +26,7 @@ export default {
       });
     },
     JoinGame(user){
-      //this.store.commit('AddUser', {id:123,hex:'jghg233',active:0})
-      //alert(this.codeJoin);
+      this.$toast.success(`Te haz unido a una partida`,{position:"top-right"});
       user.id = this.generateRandomToJoin();
       this.actionAddUser(user);
       this.redirectGame(user.name,user.id);
